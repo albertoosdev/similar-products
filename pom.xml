@@ -29,6 +29,10 @@
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2025.0.1</spring-cloud.version>
+		<springdoc.version>2.7.0</springdoc.version>
+		<swagger.version>2.2.27</swagger.version>
+		<openapitools.jackson.version>0.2.6</openapitools.jackson.version>
+		<org.mapstruct.version>1.6.3</org.mapstruct.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -65,28 +69,36 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.7.0</version>
+			<version>${springdoc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openapitools</groupId>
 			<artifactId>jackson-databind-nullable</artifactId>
-			<version>0.2.6</version>
+			<version>${openapitools.jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>2.2.27</version>
+			<version>${swagger.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>1.6.3</version>
+			<version>${org.mapstruct.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -155,7 +167,7 @@
 
 							<apiPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.api</apiPackage>
 							<modelPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.model</modelPackage>
-
+							<apiNameSuffix></apiNameSuffix>
 							<modelNameSuffix>Response</modelNameSuffix>
 
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
@@ -190,6 +202,18 @@
 					</execution>
 
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

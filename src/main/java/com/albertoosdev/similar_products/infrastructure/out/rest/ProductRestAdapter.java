@@ -7,6 +7,7 @@ import com.albertoosdev.similar_products.infrastructure.out.rest.mapper.ProductD
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
@@ -32,6 +33,7 @@ public class ProductRestAdapter implements ProductRepositoryPort {
 
     @Override
     @CircuitBreaker(name = CB_IDS, fallbackMethod = "fallbackGetSimilarIds")
+    @Cacheable(value = "similarIds", key = "#productId")
     public List<String> getSimilarIds(final String productId) {
         log.debug("Requesting similar IDs for product [{}] to external API", productId);
 
@@ -54,6 +56,7 @@ public class ProductRestAdapter implements ProductRepositoryPort {
 
     @Override
     @CircuitBreaker(name = CB_DETAIL, fallbackMethod = "fallbackGetDetail")
+    @Cacheable(value = "productDetails", key = "#similarId")
     public Optional<ProductDetail> getProductDetail(final String similarId) {
         try {
             log.debug("Fetching details for similar product ID: {}", similarId);
