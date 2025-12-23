@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Similar Products API
+
+external:
+  products-api:
+    url: http://localhost:3001
+    connection-timeout: 3000
+    read-timeout: 5000
