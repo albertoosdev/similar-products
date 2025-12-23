@@ -1,6 +1,7 @@
 package com.albertoosdev.similar_products.domain.port;
 
-import com.albertoosdev.similarproducts.openapi.infrastructure.out.dto.ProductDetail;
+import com.albertoosdev.similar_products.domain.model.ProductDetail;
+
 import java.util.List;
 import java.util.Optional;
 

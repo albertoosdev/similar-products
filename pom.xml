@@ -174,15 +174,15 @@
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/openapi/existingApis.yaml</inputSpec>
 							<generatorName>spring</generatorName>
-
 							<modelPackage>com.albertoosdev.similarproducts.openapi.infrastructure.out.dto</modelPackage>
+
+							<modelNameSuffix>External</modelNameSuffix>
 
 							<generateApis>false</generateApis>
 							<generateSupportingFiles>false</generateSupportingFiles>
 
 							<configOptions>
 								<useSpringBoot3>true</useSpringBoot3>
-								<modelNamePrefix>External</modelNamePrefix>
 							</configOptions>
 						</configuration>
 					</execution>
