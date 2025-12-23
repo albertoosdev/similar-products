@@ -1,9 +1,11 @@
 # Similar Products API
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.4-green?style=for-the-badge&logo=spring)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-green?style=for-the-badge&logo=spring)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-blue?style=for-the-badge&logo=docker)
-![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?style=for-the-badge&logo=openapi-initiative&logoColor=white)
+![Coverage](https://img.shields.io/badge/Coverage->80%25-success?style=for-the-badge&logo=jacoco&logoColor=white)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge&logo=apache&logoColor=white)
 
 A high-performance, resilient REST API designed to aggregate similar product details. This project implements a **Hexagonal Architecture** to orchestrate data from external services, featuring caching strategies and circuit breakers for fault tolerance.
 
