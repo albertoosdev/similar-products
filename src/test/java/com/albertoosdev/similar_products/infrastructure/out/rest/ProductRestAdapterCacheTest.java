@@ -52,7 +52,7 @@ class ProductRestAdapterCacheTest {
         assertThat(secondCall).containsExactly("100", "200");
         verify(1, getRequestedFor(urlEqualTo("/product/" + productId + "/similarids")));
 
-        assertThat(cacheManager.getCache("similarIds").get(productId)).isNotNull();
+        assertThat(Objects.requireNonNull(cacheManager.getCache("similarIds")).get(productId)).isNotNull();
     }
 
     @Test
