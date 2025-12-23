@@ -156,6 +156,8 @@
 							<apiPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.api</apiPackage>
 							<modelPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.model</modelPackage>
 
+							<modelNameSuffix>Response</modelNameSuffix>
+
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
 							<configOptions>
 								<useSpringBoot3>true</useSpringBoot3>
