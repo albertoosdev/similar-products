@@ -35,9 +35,11 @@
 		<org.mapstruct.version>1.6.3</org.mapstruct.version>
 
 		<commons-lang3.version>3.18.0</commons-lang3.version>
-		<commons-beanutils.version>1.10.0</commons-beanutils.version>
+		<commons-beanutils.version>1.11.0</commons-beanutils.version>
 		<guava.version>33.5.0-jre</guava.version>
 		<plexus-utils.version>4.0.2</plexus-utils.version>
+		<jna.version>5.14.0</jna.version>
+		<jsch.version>0.1.55</jsch.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -135,6 +137,16 @@
 				<groupId>org.codehaus.plexus</groupId>
 				<artifactId>plexus-utils</artifactId>
 				<version>${plexus-utils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.java.dev.jna</groupId>
+				<artifactId>jna-platform</artifactId>
+				<version>${jna.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>${jsch.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
