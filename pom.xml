@@ -33,6 +33,11 @@
 		<swagger.version>2.2.27</swagger.version>
 		<openapitools.jackson.version>0.2.6</openapitools.jackson.version>
 		<org.mapstruct.version>1.6.3</org.mapstruct.version>
+
+		<commons-lang3.version>3.18.0</commons-lang3.version>
+		<commons-beanutils.version>1.10.0</commons-beanutils.version>
+		<guava.version>33.5.0-jre</guava.version>
+		<plexus-utils.version>4.0.2</plexus-utils.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -110,6 +115,27 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.plexus</groupId>
+				<artifactId>plexus-utils</artifactId>
+				<version>${plexus-utils.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -165,7 +191,6 @@
 
 							<apiPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.api</apiPackage>
 							<modelPackage>com.albertoosdev.similarproducts.openapi.infrastructure.in.rest.model</modelPackage>
-							<apiNameSuffix></apiNameSuffix>
 							<modelNameSuffix>Response</modelNameSuffix>
 
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
