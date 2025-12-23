@@ -4,6 +4,6 @@ spring:
 
 external:
   products-api:
-    url: http://localhost:3001
+    url: ${PRODUCTS_API_URL:http://localhost:3001}
     connection-timeout: 3000
     read-timeout: 5000
